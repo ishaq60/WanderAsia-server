@@ -39,6 +39,7 @@ async function run() {
 run().catch(console.dir);
 
 const databaseCollection = client.db("WanderAsia").collection("Touristspot");
+const databaseCountry = client.db("WanderAsia").collection("country");
 
 // Add a Tour (POST)
 app.post("/addtour", async (req, res) => {
@@ -121,6 +122,15 @@ app.get("/Touristspot", async (req, res) => {
 
 
 //Delete
+app.get("/Touristspot/country/:country", async (req, res) => {
+  const query = { country: req.params.country };
+  const result = await databaseCollection.find(query).toArray();
+  res.send(result);
+});
+app.get("/country", async (req, res) => {
+  const result = await databaseCountry.find().toArray();
+  res.send(result);
+});
 
 
 app.delete('/Touristspot/:id',async(req,res)=>{
@@ -130,18 +140,9 @@ app.delete('/Touristspot/:id',async(req,res)=>{
   res.send(result)
 })
 
+app.get
 
 
-
-// app.get("/Touristspot",async(req,res)=>{
-//   console.log(req.query.email);
-//   let query={}
-//   if(req.query?.email){
-//     query={email:req.query.email}
-//   }
-//   const result =await databaseCollection.find(query).toArray()
-//   res.send(result)
-// })
 
 // Root Routez
 app.get("/", (req, res) => {
@@ -153,5 +154,3 @@ app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
 
-//WanderAsia
-//nL3czC3T5IDA1tbw
