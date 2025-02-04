@@ -1,89 +1,77 @@
-            Wander Asia - Server Side
+       # Wander Asia - Server Side
 
-This repository contains the server-side code for Wander Asia, a tourism management website focused on Southeast Asia. The backend handles user authentication, database operations, and API endpoints for managing tourist spots.
+This repository contains the server-side code for **Wander Asia**, a tourism management website focused on Southeast Asia. The backend handles user authentication, database operations, and API endpoints for managing tourist spots.
 
-Features
+## Features
 
-User Authentication: Implements secure authentication with Firebase and JWT for protected routes.
+- **User Authentication**: Implements secure authentication with Firebase and JWT for protected routes.
+- **Tourist Spot Management**: CRUD operations for adding, updating, and deleting tourist spots.
+- **Protected Routes**: Private routes for adding and managing a user's own tourist spots.
+- **Sorting & Filtering**: Sort tourist spots based on cost and filter by country.
+- **Database**: MongoDB integration for securely storing user and tourist spot data.
 
-Tourist Spot Management: CRUD operations for adding, updating, and deleting tourist spots.
+## Technologies Used
 
-Protected Routes: Private routes for adding and managing user's own tourist spots.
+- **Backend Framework**: Express.js (Node.js)
+- **Database**: MongoDB (Mongoose for schema modeling)
+- **Authentication**: Firebase Authentication & JWT
+- **Environment Variables**: dotenv for secure credentials handling
+- **API Testing**: Postman
 
-Sorting & Filtering: Sort tourist spots based on cost and filter by country.
+## Installation & Setup
 
-Database: MongoDB integration for storing user and tourist spot data securely.
-
-Technologies Used
-
-Backend Framework: Express.js (Node.js)
-
-Database: MongoDB (Mongoose for schema modeling)
-
-Authentication: Firebase Authentication & JWT
-
-Environment Variables: dotenv for secure credentials handling
-
-API Testing: Postman
-
-Installation & Setup
-
-Clone the repository:
-
+### Clone the repository:
+```sh
 git clone https://github.com/your-username/wander-asia-server.git
 cd wander-asia-server
+```
 
-Install dependencies:
-
+### Install dependencies:
+```sh
 npm install
+```
 
-Create a .env file and add the following:
-
+### Create a `.env` file and add the following:
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 FIREBASE_CONFIG=your_firebase_credentials
+```
 
-Start the server:
-
+### Start the server:
+```sh
 npm start
+```
 
-API Endpoints
+## API Endpoints
 
-Authentication
+### Authentication
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login user and return JWT token
 
-POST /api/auth/register - Register a new user
+### Tourist Spots
+- `GET /api/tourist-spots` - Get all tourist spots
+- `POST /api/tourist-spots` - Add a new tourist spot (Protected Route)
+- `GET /api/tourist-spots/:id` - Get details of a specific tourist spot
+- `PUT /api/tourist-spots/:id` - Update a tourist spot (Protected Route)
+- `DELETE /api/tourist-spots/:id` - Delete a tourist spot (Protected Route)
 
-POST /api/auth/login - Login user and return JWT token
+### User-Specific
+- `GET /api/my-list` - Get all tourist spots added by the logged-in user (Protected Route)
 
-Tourist Spots
+## Deployment
 
-GET /api/tourist-spots - Get all tourist spots
+The server is deployed on **Render/Vercel**. You can access the API at:
 
-POST /api/tourist-spots - Add a new tourist spot (Protected Route)
+🔗 **API Base URL:** [https://wander-asia-server.vercel.app](https://wander-asia-server.vercel.app)
 
-GET /api/tourist-spots/:id - Get details of a specific tourist spot
+## Live Website
 
-PUT /api/tourist-spots/:id - Update a tourist spot (Protected Route)
+The client-side application is hosted at:
 
-DELETE /api/tourist-spots/:id - Delete a tourist spot (Protected Route)
+🌍 **Frontend URL:** [https://wander-asia.vercel.app](https://wander-asia.vercel.app)
 
-User-Specific
+## Contributions
 
-GET /api/my-list - Get all tourist spots added by the logged-in user (Protected Route)
-
-Deployment
-
-The server is deployed on Render/Vercel. You can access the API at:
-
-https://wander-asia-server.vercel.app
-
-Live Website
-
-Client-side hosted at:
-
-
-
-Contributions
-
-Feel free to fork and contribute! Open a pull request with your changes.
+Feel free to fork the repository and contribute! Open a pull request with your changes. 🚀
