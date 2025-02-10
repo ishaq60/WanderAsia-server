@@ -70,7 +70,7 @@ The server is deployed on **Render/Vercel**. You can access the API at:
 
 The client-side application is hosted at:
 
-🌍 **Frontend URL:** [https://wander-asia.vercel.app](https://wander-asia.vercel.app)
+🌍 **Frontend URL:** [https://wander-asia.vercel.app](https://wanderasia-41bae.web.app/)
 
 ## Contributions
 
